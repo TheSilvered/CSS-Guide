@@ -1,3 +1,4 @@
-# Guida CSS
-
-a^c^
+---
+layout: home
+author_profile: true
+---
