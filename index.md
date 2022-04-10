@@ -8,6 +8,7 @@ CSS è un acronimo che sta per **C**ascading **S**tyle **S**heet, foglio di stil
 Indice:
 - [Storia](#storia)
 - [Collegamento con HTML](#collegamento-con-html)
+- [Sintassi](#sintassi)
 
 ## Storia
 
@@ -30,4 +31,26 @@ Basta inserire il tag all'interno di `<head>`, con `rel="stylesheet"` e `href="n
     <link rel="stylesheet" href="nome-del-file.css" />
 </head>
 ```
+
+Questo però non è l'unico metodo per mettere CSS all'interno di HTML. Infatti, esso può essere scritto direttamente all'interno del file HTML, come contenuto del tag `<style>` all'interno di `<head>` o come valore dell'attributo `style`, presente in qualsiasi elemento. Nell'ultimo caso non si può specificare un [selettore](#selettori) diverso dall'elemento stesso.
+
 [^1]: `nome-del-file` è sostituito con il nome effettivo del file.
+
+## Sintassi
+
+Il codice CSS ha una sintassi completamente diversa da quella di HTML. Esso è composto da selettori, che specificano l'elemento a cui applicare lo stile e da dichiarazioni che contengono le proprietà, l'equivalente degli attributi in HTML, e i loro valori.
+
+Questo è un esempio di codice CSS:
+```css
+p {
+    text-align: center;
+    color: rgb(255, 0, 90);
+}
+```
+
+In questo caso `p` è il selettore, `text_align` e `color` sono proprietà, e `center` e `rgb(255, 0, 90)` sono valori. Da notare che tutte le proprietà sono racchiuse tra due parentesi graffe che si scrivono con `Alt Gr` + `è` per `{` e `Alt Gr` + `+` per `}`. Il valore di una proprietà è preceduto da `:`, come succedeva per l'uguale (`=`) in HTML e termina con un punto e virgola `;`. Questo perché CSS è fatto per poter essere scritto in una singola riga, quindi ogni nuova riga e le indentazioni servono solo a rendere il codice leggibile. Questo significa che il codice sopra potrebbe essere scritto così:
+
+```css
+p{text-align:center;color:rgb(255,0,90);}
+```
+ma è chiaramente meno leggibile di quello sopra.
