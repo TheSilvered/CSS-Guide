@@ -1,5 +1,7 @@
 ---
 title: Guida CSS
+sidebar:
+  nav: "docs"
 ---
 
 CSS è un acronimo che sta per **C**ascading **S**tyle **S**heet, foglio di stile a cascata. È utilizzato per formattare il codice HTML mantenendo leggibile la struttura della pagina.
