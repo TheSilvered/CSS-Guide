@@ -7,8 +7,18 @@ CSS è un acronimo che sta per **C**ascading **S**tyle **S**heet, foglio di stil
 
 Indice:
 - [Storia](#storia)
-- [Collegamento con HTML](#collegamento-con-html)
+- [Collegare CSS e HTML](#collegare-css-e-html)
+  - [CSS esterno](#css-esterno)
+  - [CSS interno](#css-interno)
+  - [CSS in linea](#css-in-linea)
 - [Sintassi](#sintassi)
+  - [Commenti](#commenti)
+  - [Selettori](#selettori)
+  - [Proprietà](#proprietà)
+- [Colori](#colori)
+  - [RGB e RGBA](#rgb-e-rgba)
+  - [HSL e HSLA](#hsl-e-hsla)
+  - [Colori esadecimali](#colori-esadecimali)
 
 ## Storia
 
@@ -20,7 +30,11 @@ Nel 1993 alcuni browser web iniziarono a presentare tag proprietari, come `<font
 
 Per questi e altri problemi, il W3C (**W**orld **W**ide **W**eb **C**onsortium) presentò nel 1996 le specifiche del CSS 1. Queste separavano la formattazione dalla struttura e davano uno standard che i browser potessero seguire.
 
-## Collegamento con HTML
+## Collegare CSS e HTML
+
+Esistono tre modi per mettere CSS in HTML: esterno, interno e in linea.
+
+### CSS esterno
 
 Il CSS è scritto principalmente in file secondari con l'estensione `.css`. Per collegare un file esterno in HTML si usa il tag `<link>` e CSS non fa differenza.
 Basta inserire il tag all'interno di `<head>`, con `rel="stylesheet"` e `href="nome-del-file.css"`[^1] quindi il tag completo diventerebbe:
@@ -32,13 +46,41 @@ Basta inserire il tag all'interno di `<head>`, con `rel="stylesheet"` e `href="n
 </head>
 ```
 
-Questo però non è l'unico metodo per mettere CSS all'interno di HTML. Infatti, esso può essere scritto direttamente all'interno del file HTML, come contenuto del tag `<style>` all'interno di `<head>` o come valore dell'attributo `style`, presente in qualsiasi elemento. Nell'ultimo caso non si può specificare un [selettore](#selettori) diverso dall'elemento stesso.
+---
+
+### CSS interno
+
+È possibile scrivere CSS direttamente all'interno del file HTML. Questo è fatto all'interno del tag `<style>`.
+
+```html
+<head>
+    <style>
+        p {
+            font-family: monospace;
+        }
+    </style>
+</head>
+```
+
+---
+
+### CSS in linea
+
+Per dare velocemente uno stile ad un singolo elemento è possibile scrivere il CSS come valore dell'attributo `style`.
+
+```html
+<body style="background-color: black;">
+
+</body>
+```
+
+Nota che non è possibile utilizzare i [selettori](#selettori) quando si scrive CSS in linea.
 
 [^1]: `nome-del-file` è sostituito con il nome effettivo del file.
 
 ## Sintassi
 
-Il codice CSS ha una sintassi completamente diversa da quella di HTML. Esso è composto da selettori, che specificano l'elemento a cui applicare lo stile e da dichiarazioni che contengono le proprietà, l'equivalente degli attributi in HTML, e i loro valori.
+Il codice CSS ha una sintassi completamente diversa da quella di HTML. Esso è composto da [selettori](#selettori), che specificano l'elemento a cui applicare lo stile e da dichiarazioni che contengono le [proprietà](#proprietà), l'equivalente degli attributi in HTML, e i loro valori.
 
 Questo è un esempio di codice CSS:
 ```css
@@ -162,3 +204,77 @@ Un selettore di gruppo non deve avere tutti i selettori compresi dello stesso ti
     font-weight: bold;
 }
 ```
+
+### Proprietà
+
+Le proprietà sono, in parte, l'equivalente degli attributi in HTML. Esse sono formate da una o più parole separate da trattini `-`.
+Per dare un valore a queste proprietà si utilizzano i due punti `:`. Il valore in sé può essere di vari tipi spiegati in seguito.
+
+## Colori
+
+In CSS esistono vari modi per selezionare un colore:
+
+- [Colori predefiniti](https://www.w3schools.com/cssref/css_colors.asp)
+- [Funzioni rgb e rgba](#rgb-e-rgba)
+- [Funzioni hsl e hsla](#hsl-e-hsla)
+- [Colori esadecimali](#colori-esadecimali)
+
+### RGB e RGBA
+
+La [funzione](#funzioni) `rgb()` prende tre argomenti: il valore del rosso, del verde e del blu necessari per rappresentare un colore. Ognuno di questi valori è un numero intero che va da 0 a 255 compreso.
+
+La [funzione](#funzioni) `rgba()` prende un'argomento in più: la [percentuale](#tipi-di-valori) di trasparenza del colore.
+
+```css
+.rosso {
+    background-color: rgb(255, 0, 0);
+}
+
+.verdino {
+    background-color: rgba(0, 255, 0, 50%);
+}
+
+.bianco {
+    background-color: rgb(255, 255, 255);
+}
+```
+
+### HSL e HSLA
+
+La [funzione](#funzioni) `hsl()` sfrutta un sistema diverso di rappresentazione di colori e prende tre valori: la tinta, la saturazione e la lucentezza (in inglese **h**ue, **s**aturation e **l**ightness).
+
+La tinta è un numero intero che può avere un valore tra 0 e 360 compresi, la saturazione e la lucentezza sono entrambe [percentuali](#tipi-di-valori).
+
+Come per `rgba()`, `hsla()` prende un quarto valore: la trasparenza, che è anch'esso una pencentuale.
+
+```css
+/* i colori sono gli stessi di rgb() e rgba() */
+.rosso {
+    background-color: rgb(0, 100%, 50%);
+}
+
+.verdino {
+    background-color: rgba(120, 100%, 50%, 50%);
+}
+
+.bianco {
+    background-color: rgb(0, 0%, 100%);
+}
+```
+
+### Colori esadecimali
+
+I colori esadecimali, in CSS, sono una rappresentazione esadecimale dei colori ottenuti con `rgb()` e `rgba()`[^3], sono preceduti da un cancelletto `#` e possono avere quattro diverse lunghezze:
+
+```
+#rrvvbb
+#rrvvbbtt
+#rvb
+#rvbt
+```
+
+Qui `r` sta per rosso, `v` per verde, `b` per blu e `t` per trasparenza, quindi, nel primo tipo di colore, le prime due cifre del numero cambiano il livello del rosso del colore, le seconde due quello del verde e le ultime due quello del blu.
+
+Le cifre singole sono utilizzate solo quando sia la prima che la seconda cifra di ogni colore (e della trasparenza) sono uguali, quindi scrivere `#ff0077` o `#f07` è indifferente.
+
+[^3]: Contando in esadecimale `00` è uguale a `0` e `ff` è uguale a `255`, una diretta correlazione con le due funzioni
