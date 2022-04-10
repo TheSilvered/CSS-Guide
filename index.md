@@ -54,3 +54,42 @@ In questo caso `p` è il selettore, `text_align` e `color` sono proprietà, e `c
 p{text-align:center;color:rgb(255,0,90);}
 ```
 ma è chiaramente meno leggibile di quello sopra.
+
+### Selettori
+
+Esistono vari tipi di selettori ma verranno approfonditi solo i selettori semplici e i selettori di attributi.
+
+I selettori semplici permettono di selezionare un elemento basandosi su nome, classe o id. Per selezionare un elemento per nome basta scrivere il nome del tag, esempio con un paragrafo:
+
+```css
+p {
+    color: white;
+}
+```
+
+Per selezionare un elemento in base all'id, si scrive un cancelletto `#` seguito dal nome dell'id che si vuole selezionare. Da tenere a mente che non dovrebbero esistere più elementi con lo stesso id. Per dare un ad ad un elemento basta usare l'attributo `id`, qui il valore *non* deve essere preceduto da un cancelletto e non deve contenere spazi o iniziare con un numero.
+
+Un esempio con CSS e HTML sempre di un paragrafo:[^2]
+
+```html
+<html>
+<!-- Tralascio <head> -->
+
+<body>
+    <p id="p1">Paragrafo uno</p>
+    <p id="p2">Paragrafo due</p>
+</body>
+</html>
+```
+
+```css
+#p1 {
+    font-family: monospace;
+}
+
+#p2 {
+    font-size: 20px;
+}
+```
+
+[^2]: tutto quello tra `<!--` e `-->` è un commento di HTML ed è ignorato
