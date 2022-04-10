@@ -5,6 +5,10 @@ layout: single
 
 CSS è un acronimo che sta per **C**ascading **S**tyle **S**heet, foglio di stile a cascata. È utilizzato per formattare il codice HTML mantenendo leggibile la struttura della pagina.
 
+Indice:
+- [Storia](#storia)
+- [Collegamento con HTML](#collegamento-con-html)
+
 ## Storia
 
 Nel 1993 alcuni browser web iniziarono a presentare tag proprietari, come `<font>`, che funzionavano solo al loro interno. Questo portò i programmatori a farne molto uso per poter cambiare lo stile della pagina web ma portò anche a molti problemi:
@@ -14,4 +18,16 @@ Nel 1993 alcuni browser web iniziarono a presentare tag proprietari, come `<font
 - Molti browser non supportavano tutti i tag o tutti gli attributi che erano presenti in altri browser (oggi il problema esiste ancora ma è più limitato)
 
 Per questi e altri problemi, il W3C (**W**orld **W**ide **W**eb **C**onsortium) presentò nel 1996 le specifiche del CSS 1. Queste separavano la formattazione dalla struttura e davano uno standard che i browser potessero seguire.
-[storia](#Storia)
+
+## Collegamento con HTML
+
+Il CSS è scritto principalmente in file secondari con l'estensione `.css`. Per collegare un file esterno in HTML si usa il tag `<link>` e CSS non fa differenza.
+Basta inserire il tag all'interno di `<head>`, con `rel="stylesheet"` e `href="nome-del-file.css"`[^1] quindi il tag completo diventerebbe:
+
+```html
+<head>
+    <title>Titolo della pagina</title>
+    <link rel="stylesheet" href="nome-del-file.css" />
+</head>
+```
+[^1]: `nome-del-file` è sostituito con il nome effettivo del file.
