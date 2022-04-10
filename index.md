@@ -46,8 +46,6 @@ Basta inserire il tag all'interno di `<head>`, con `rel="stylesheet"` e `href="n
 </head>
 ```
 
----
-
 ### CSS interno
 
 È possibile scrivere CSS direttamente all'interno del file HTML. Questo è fatto all'interno del tag `<style>`.
@@ -62,8 +60,6 @@ Basta inserire il tag all'interno di `<head>`, con `rel="stylesheet"` e `href="n
 </head>
 ```
 
----
-
 ### CSS in linea
 
 Per dare velocemente uno stile ad un singolo elemento è possibile scrivere il CSS come valore dell'attributo `style`.
@@ -77,6 +73,7 @@ Per dare velocemente uno stile ad un singolo elemento è possibile scrivere il C
 Nota che non è possibile utilizzare i [selettori](#selettori) quando si scrive CSS in linea.
 
 [^1]: `nome-del-file` è sostituito con il nome effettivo del file.
+
 
 ## Sintassi
 
@@ -204,6 +201,7 @@ Un selettore di gruppo non deve avere tutti i selettori compresi dello stesso ti
     font-weight: bold;
 }
 ```
+
 
 ### Proprietà
 
