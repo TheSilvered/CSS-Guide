@@ -277,4 +277,19 @@ Qui `r` sta per rosso, `v` per verde, `b` per blu e `t` per trasparenza, quindi,
 
 Le cifre singole sono utilizzate solo quando sia la prima che la seconda cifra di ogni colore (e della trasparenza) sono uguali, quindi scrivere `#ff0077` o `#f07` è indifferente.
 
+```css
+/* i colori sono gli stessi di rgb() e rgba() */
+.rosso {
+    background-color: #f00;
+}
+
+.verdino {
+    background-color: #00ff0077;
+}
+
+.bianco {
+    background-color: #ffffff;
+}
+```
+
 [^3]: Contando in esadecimale `00` è uguale a `0` e `ff` è uguale a `255`, una diretta correlazione con le due funzioni
