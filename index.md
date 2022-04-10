@@ -55,9 +55,23 @@ p{text-align:center;color:rgb(255,0,90);}
 ```
 ma è chiaramente meno leggibile di quello sopra.
 
+### Commenti
+
+I commenti in CSS si aprono con `/*` e si chiudono con `*/` e servono per rendere più chiare le intenzioni di quello che si sta facendo, essi possono occupare più righe e vengono completamente ignorati.[^2]
+
+```css
+/* Questo è un commento in una sola riga */
+body {
+    background-color: red;
+}
+/* Questo è un commento
+che si espande
+in più righe */
+```
+
 ### Selettori
 
-Esistono vari tipi di selettori ma verranno approfonditi solo i selettori semplici e i selettori di attributi.
+Esistono vari tipi di selettori ma verranno approfonditi solo i selettori semplici.
 
 I selettori semplici permettono di selezionare un elemento basandosi su nome, classe o id. Per selezionare un elemento per nome basta scrivere il nome del tag, esempio con un paragrafo:
 
@@ -66,6 +80,8 @@ p {
     color: white;
 }
 ```
+
+---
 
 Per selezionare un elemento in base all'id, si scrive un cancelletto `#` seguito dal nome dell'id che si vuole selezionare. Da tenere a mente che non dovrebbero esistere più elementi con lo stesso id. Per dare un ad ad un elemento basta usare l'attributo `id`, qui il valore *non* deve essere preceduto da un cancelletto e non deve contenere spazi o iniziare con un numero.
 
@@ -92,4 +108,57 @@ Un esempio con CSS e HTML sempre di un paragrafo:[^2]
 }
 ```
 
-[^2]: tutto quello tra `<!--` e `-->` è un commento di HTML ed è ignorato
+[^2]: tutto quello tra `<!--` e `-->` è un commento in HTML
+
+---
+
+Per selezionare un elemento in base alla classe, si scrive un punto `.` seguito dal nome della classe. Come per l'id, la classe viene impostata sull'elemento con l'attributo `class`, non deve contenere il punto presente in CSS e non può iniziare con un numero. A differenza dell'id, si possono avere più elementi con la stessa classe e un elemento può avere più classi. Per dare più classi ad un elemento basta separarle con uno spazio.
+Si possono selezionare classi appartenenti ad un solo tipo di elemento mettendo il nome della classe davanti all'elemento *senza spazi*.
+
+Un esempio di come possono essere applicate le classi:
+
+```css
+.b {
+    font-weight: bold;
+}
+
+p.i {
+    font-style: italic;
+}
+
+.u {
+    text-decoration: underline;
+}
+```
+
+```html
+<!-- Ometto <html> e <head> -->
+<body>
+    <!-- uso le classi 'b', 'i' e 'u' invece dei tag
+         per dare lo stile a tutto il paragrafo -->
+    <p class="b i u"></p>
+
+    <!-- la classe 'i' non fa nulla perché modifica solo i tag <p> -->
+    <h1 class="i">Titolo</h1>
+</body>
+```
+
+---
+
+Il selettore di gruppo permette di unire vari selettori che siano id, classe o nome dell'elemento. Ogni selettore da aggiungere è separato da una virgola:
+
+```css
+/* Un selettore che comprente tutti i titoli */
+h1, h2, h3, h4, h5, h6 {
+    font-family: monospace;
+}
+```
+
+Un selettore di gruppo non deve avere tutti i selettori compresi dello stesso tipo:
+
+```css
+/* Comprende la classe 'bold', l'id 'important-p' e gli elementi 'div' */
+.bold, #important-p, div {
+    font-weight: bold;
+}
+```
