@@ -1,7 +1,6 @@
 ---
 title: Guida CSS
-sidebar:
-  nav: "docs"
+layout: single
 ---
 
 CSS è un acronimo che sta per **C**ascading **S**tyle **S**heet, foglio di stile a cascata. È utilizzato per formattare il codice HTML mantenendo leggibile la struttura della pagina.
@@ -15,3 +14,5 @@ Nel 1993 alcuni browser web iniziarono a presentare tag proprietari, come `<font
 - Molti browser non supportavano tutti i tag o tutti gli attributi che erano presenti in altri browser (oggi il problema esiste ancora ma è più limitato)
 
 Per questi e altri problemi, il W3C (**W**orld **W**ide **W**eb **C**onsortium) presentò nel 1996 le specifiche del CSS 1. Queste separavano la formattazione dalla struttura e davano uno standard che i browser potessero seguire.
+
+
