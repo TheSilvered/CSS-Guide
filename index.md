@@ -152,7 +152,7 @@ Un esempio con CSS e HTML sempre di un paragrafo:[^2]
 ---
 
 Per selezionare un elemento in base alla classe, si scrive un punto `.` seguito dal nome della classe. Come per l'id, la classe viene impostata sull'elemento con l'attributo `class`, non deve contenere il punto presente in CSS e non può iniziare con un numero. A differenza dell'id, si possono avere più elementi con la stessa classe e un elemento può avere più classi. Per dare più classi ad un elemento basta separarle con uno spazio.
-Si possono selezionare classi appartenenti ad un solo tipo di elemento mettendo il nome della classe davanti all'elemento *senza spazi*.
+Si possono selezionare classi appartenenti ad un solo tipo di elemento mettendo il nome dell'elemento davanti alla classe separandoli con un punto.
 
 Un esempio di come possono essere applicate le classi:
 
