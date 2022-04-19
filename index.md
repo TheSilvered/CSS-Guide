@@ -96,7 +96,7 @@ ma è chiaramente meno leggibile di quello sopra.
 
 ### Commenti
 
-I commenti in CSS si aprono con `/*` e si chiudono con `*/` e servono per rendere più chiare le intenzioni di quello che si sta facendo, essi possono occupare più righe e vengono completamente ignorati.[^2]
+I commenti in CSS si aprono con `/*` e si chiudono con `*/` e servono per rendere più chiare le intenzioni di quello che si sta facendo, essi possono occupare più righe e vengono completamente ignorati.
 
 ```css
 /* Questo è un commento in una sola riga */
