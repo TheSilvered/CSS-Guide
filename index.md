@@ -20,6 +20,7 @@ Indice:
   - [RGB e RGBA](#rgb-e-rgba)
   - [HSL e HSLA](#hsl-e-hsla)
   - [Colori esadecimali](#colori-esadecimali)
+- [Tipi di valori](#tipi-di-valori)
 
 ## Storia
 
@@ -207,7 +208,7 @@ Un selettore di gruppo non deve avere tutti i selettori compresi dello stesso ti
 ### Proprietà
 
 Le proprietà sono, in parte, l'equivalente degli attributi in HTML. Esse sono formate da una o più parole separate da trattini `-`.
-Per dare un valore a queste proprietà si utilizzano i due punti `:`. Il valore in sé può essere di vari tipi spiegati in seguito.
+Per dare un valore a queste proprietà si utilizzano i due punti `:`; Il valore in sé può essere di vari [tipi](#tipi-di-valori).
 
 ### Funzioni
 
