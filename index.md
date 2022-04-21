@@ -15,6 +15,7 @@ Indice:
   - [Commenti](#commenti)
   - [Selettori](#selettori)
   - [Proprietà](#proprietà)
+  - [Funzioni](#funzioni)
 - [Colori](#colori)
   - [RGB e RGBA](#rgb-e-rgba)
   - [HSL e HSLA](#hsl-e-hsla)
@@ -208,6 +209,18 @@ Un selettore di gruppo non deve avere tutti i selettori compresi dello stesso ti
 Le proprietà sono, in parte, l'equivalente degli attributi in HTML. Esse sono formate da una o più parole separate da trattini `-`.
 Per dare un valore a queste proprietà si utilizzano i due punti `:`. Il valore in sé può essere di vari tipi spiegati in seguito.
 
+### Funzioni
+
+Le funzioni in CSS prendono degli argomenti e contengono del codice che svolge una funzione in base ad essi. Una funzione si dice che viene "chiamata" quando il codice contenuto all'interno viene eseguito. Per chiamare una funzione si scrive il nome di essa, seguito da un paio di parentesi tonde `()` che contengono gli argomenti separati da virgole:
+
+```css
+.rosso {
+    background-color: rgb(255, 0, 0);
+}
+```
+
+Qui `rgb` è la funzione e fiene chiamata con gli argomenti `255`, `0` e `0`. Attenzione a mettere il numero esatto di argomenti che una funzione accetta e di *non* mettere una virgola in più alla fine: `rgb(255, 0, 0,)` è sbagliato.
+
 ## Colori
 
 In CSS esistono vari modi per selezionare un colore:
@@ -291,3 +304,5 @@ Le cifre singole sono utilizzate solo quando sia la prima che la seconda cifra d
 ```
 
 [^3]: Contando in esadecimale `00` è uguale a `0` e `ff` è uguale a `255`, una diretta correlazione con le due funzioni
+
+
