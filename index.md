@@ -261,15 +261,15 @@ Come per `rgba()`, `hsla()` prende un quarto valore: la trasparenza, che è anch
 ```css
 /* i colori sono gli stessi di rgb() e rgba() */
 .rosso {
-    background-color: rgb(0, 100%, 50%);
+    background-color: hsl(0, 100%, 50%);
 }
 
 .verdino {
-    background-color: rgba(120, 100%, 50%, 50%);
+    background-color: hsla(120, 100%, 50%, 50%);
 }
 
 .bianco {
-    background-color: rgb(0, 0%, 100%);
+    background-color: hsl(0, 0%, 100%);
 }
 ```
 
@@ -305,4 +305,34 @@ Le cifre singole sono utilizzate solo quando sia la prima che la seconda cifra d
 
 [^3]: Contando in esadecimale `00` è uguale a `0` e `ff` è uguale a `255`, una diretta correlazione con le due funzioni
 
+## Tipi di valori
 
+In CSS le proprietà possono avere vari tipi di attributi[^4]:
+
+- `%` percentuali
+- `em` dimensione del font dell'elemento corrente
+- `rem` dimensione del font dell'elemento principale (il tag `<html>`)
+- `vw` 1% della larghezza della finestra del browser
+- `vh` 1% dell'altezza della finestra del browser
+- `cm` centimetri
+- `mm` millimetri
+- `px` pixel
+
+Per specificare il tipo di un valore (numerico) bisogna mettere il valore in sé, seguito dall'unità di misura:
+
+```css
+p {
+    font-size: 20px;
+}
+```
+
+Ci possono essere anche delle proprietà che hanno dei valori in parola, in questo caso essi non hanno un'unità di misura:
+
+```css
+body {
+    background-repeat: no-repeat;
+}
+```
+In questo caso `background-repeat` accetta quattro valori: `repeat`, `no-repeat`, `repeat-x` e `repeat-y`. Qualsiasi altro valore non funziona.
+
+[^4]: Non sono elencati tutti i tipi di valori
