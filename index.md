@@ -541,7 +541,7 @@ Valori accettati:
 - `monspace` font con caratteri della stessa larghezza
 - il nome della famiglia tra virgolette
 
-```
+```css
 #p1 {
     font-family: sans-serif;
 }
