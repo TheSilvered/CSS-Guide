@@ -21,6 +21,8 @@ Indice:
   - [HSL e HSLA](#hsl-e-hsla)
   - [Colori esadecimali](#colori-esadecimali)
 - [Tipi di valori](#tipi-di-valori)
+- [Foglio a cascata](#foglio-a-cascata)
+- [Il Box Model di CSS](#il-box-model-di-css)
 
 ## Storia
 
@@ -336,4 +338,368 @@ body {
 ```
 In questo caso `background-repeat` accetta quattro valori: `repeat`, `no-repeat`, `repeat-x` e `repeat-y`. Qualsiasi altro valore non funziona.
 
+Una proprietà, in CSS, può prendere più di un valore. In questo caso, i vari valori vanno separati da uno spazio.
+
+```css
+.highlight {
+    border: 2px solid white;
+}
+```
+
+Qui la proprietà `border` prende tre valori: `2px` per lo spessore, `solid` per lo stile e `white` per il colore.
+
 [^4]: Non sono elencati tutti i tipi di valori
+
+## Foglio a cascata
+
+CSS è un foglio di stile a cascata, questo significa che qualsiasi proprietà di un elemento è determinata dall'ultimo valore dato. Un file CSS è letto dall'alto verso il basso, quindi se all'interno c'è questo codice:
+
+```css
+body {
+    background-color: red;
+}
+
+body {
+    background-color: blue;
+}
+```
+
+il colore di sfondo di `body` sarà blù, visto che `background-color: red` è *sovrascritto* da `background-color: blue`.
+
+## Il Box Model di CSS
+
+![css box model](https://extelos.com/assets/images/blog/boxmodel.gif)
+
+Il Box Model indica lo spazio che è occupato da un elemento:
+
+- *Content* indica il contenuto dell'elemento
+- *Padding* indica lo spazio tra il contenuto e il bordo
+- *Border* indica lo spessore del bordo
+- *Margin* indica dello spazio aggiuntivo occupato dall'elemento
+
+## Lista delle proprietà
+
+### background
+
+Tutte le proprietà che iniziano con `background-` hanno a che fare con lo sfondo
+
+#### background-color
+
+Imposta il colore di sfondo di un elemento.
+
+Valori accettati:
+- nomi di colori
+- colori rgb e rgba
+- colori hsl e hsla
+- colori esadecimali
+
+#### background-image
+
+Imposta l'immagine di sfondo.
+
+Valori accettati:
+- link tramite la funzione `url`
+
+#### background-size
+
+Imposta la dimensione dell'immagine di sfondo.
+
+Valori accettati:
+- la larghezza dell'immagine, mantiene le proporzioni
+- un secondo valore opzionale che indica l'altezza e non rispetta le proporzioni
+
+```css
+body {
+    background-image: url("image.jpg");
+    background-size: 20em;
+}
+
+div {
+    background-image: url("image.jpg");
+    /* l'immagine è lunga il doppio dell'altezza */
+    background-size: 20em 10em;
+}
+```
+
+#### background-repeat
+
+Imposta il criterio di ripetizione dell'immagine.
+
+Valori accettati:
+- `repeat`, valore di default, ripete l'immagine in entrambi gli assi
+- `repeat-x` ripete l'immagine sull'asse orizzontale
+- `repeat-y` ripete l'immagine sull'asse verticale
+- `no-repeat` non ripete l'immagine
+
+#### background-attachment
+
+Imposta il criterio di scorrimento dell'immagine.
+
+Valori accettati:
+- `scroll`, valore di default, l'immagine scorre con gli elementi della pagina
+- `fixed` l'immagine non scorre
+
+### text
+
+Varie proprietà per modificare il testo.
+
+#### text-align
+Imposta l'allineamento del testo.
+
+Valori accettati:
+- `left`, valore di default, allinea il testo a sinistra
+- `right` allinea il testo a destra
+- `center` allinea il testo al centro
+- `justify` allinea il testo a sinistra, adattando la riga alla larghezza dell'elemento
+
+#### text-decoration-line
+Imposta la posizione della linea di decorazione.
+
+Valori accettati:
+- `underline` sottolineatura
+- `overline` linea sopra
+- `line-through` linea in mezzo (come il tag `<s>`)
+
+Può accettare uno o due di questi valori.
+
+#### text-decoration-style
+Imposta lo stile della decorazione del testo.
+
+Valori accettati:
+- `solid`, valore di default, linea solida
+- `wavy` linea ondulata
+- `dottet` linea a puntini
+- `dashed` linea tratteggiata
+- `double` linea doppia
+
+#### text-decoration-color
+Imposta il colore della decorazione del testo.
+
+Valori accettati:
+- nomi di colori
+- colori rgb e rgba
+- colori hsl e hsla
+- colori esadecimali
+
+#### text-decoration-thickness
+Imposta lo spessore della decorazione del testo.
+
+Valori accettati:
+- un numero che indica lo spessore
+
+### font
+
+Varie proprietà per modificare il font del testo.
+
+#### font-family
+Imposta la famiglia del font.
+
+Valori accettati:
+- `serif` font con le grazie
+- `sans-serif` font senza grazie
+- `monspace` font con caratteri della stessa larghezza
+- il nome della famiglia tra virgolette
+
+```
+#p1 {
+    font-family: sans-serif;
+}
+
+#p2 {
+    font-family: "Comic Sans MS";
+}
+```
+
+#### font-weight
+Imposta il peso del font ("nerezza").
+
+Valori accettati:
+- `bold` grassetto/neretto
+- un numero senza unità di misura da 100 a 900
+
+#### font-size
+Imposta la grandezza del font.
+
+Valori accettati:
+- `small` piccolo
+- `smaller` più piccolo
+- `large` grande
+- `larger` più grande
+- un numero con unità di misura che indica l'esatta altezza di ogni carattere
+
+#### font-style
+Imposta lo stile del font.
+
+Valori accettati:
+- `normal`, valore di default, testo normale
+- `italic` testo corsivo
+
+### border
+
+Proprietà per personalizzare il bordo di un elemento.
+
+#### border-color
+Imposta il colore del bordo.
+
+Valori accettati:
+- nomi di colori
+- colori rgb e rgba
+- colori hsl e hsla
+- colori esadecimali
+
+#### border-width
+Imposta lo spessore della decorazione del testo.
+
+Valori accettati:
+- un numero che indica lo spessore
+
+#### border-style
+Imposta lo stile della decorazione del testo.
+
+Valori accettati:
+- `solid` linea solida
+- `dottet` linea a puntini
+- `dashed` linea tratteggiata
+- `double` linea doppia
+- `inset` bordo in 3D verso l'interno
+- `outset` bordo in 3D verso l'esterno
+
+Questa proprietà accetta uno o quattro valori. Se si mette un singolo valore lo stesso stile è applicato a tutti i lati, se si mettono quattro valori lo stile è applicato in ordine al lato sopra, a destra, sotto, a destra.
+
+#### border-radius
+Imposta la smussatura degli angoli di un elemento.
+
+Valori accettati:
+- un numero con un'unità che indica il raggio
+
+Questa proprietà accetta uno o quattro valori. Se si mette un singolo valore lo stesso stile è applicato a tutti gli angloi, se si mettono quattro valori lo stile è applicato in ordine all'angolo in alto a sinistra, in alto a destra, in basso a destra, in basso a sinistra.
+
+### list-style
+
+Proprietà che modificano lo stile di una lista.
+
+#### list-style-type
+Imposta il tipo di simbolo usato nella lista.
+
+Valori accettati per \<ul\>:
+- `disc` pallino pieno, default
+- `circle` pallino vuoto
+- `square` quadratino
+- `none` nessuno
+
+Valori accettati per \<ol\>:
+- `decimal` numeri decimali
+- `decimal-leading-zero` numeri decimali con uno zero davanti
+- `lower-alpha` lettere minuscole
+- `upper-alpha` lettere maiuscole
+- `lower-greek` lettere greche minuscole
+- `upper-greek` lettere greche maiuscole
+- `lower-roman` numeri romani minuscoli
+- `upper-roman` numeri romani maiuscoli
+
+#### list-style-position
+Imposta la posizione del simbolo della lista.
+
+Valori accettati:
+- `outside`, valore di default, il simbolo è al difuori dell'area della lista
+- `inside` il simbolo è all'interno dell'area della lista
+
+### padding
+Imposta il padding di ogni lato.
+
+Valori accettati:
+- numero con unità di misura
+
+#### padding-top
+Imposta il padding del lato sopra.
+
+Valori accettati:
+- numero con unità di misura
+
+#### padding-bottom
+Imposta il padding del lato sotto.
+
+Valori accettati:
+- numero con unità di misura
+
+#### padding-left
+Imposta il padding del lato a sinistra.
+
+Valori accettati:
+- numero con unità di misura
+
+#### padding-right
+Imposta il padding del lato a destra.
+
+Valori accettati:
+- numero con unità di misura
+
+### margin
+Imposta il margin di ogni lato.
+
+Valori accettati:
+- numero con unità di misura
+
+#### margin-top
+Imposta il margin del lato sopra.
+
+Valori accettati:
+- numero con unità di misura
+
+#### margin-bottom
+Imposta il margin del lato sotto.
+
+Valori accettati:
+- numero con unità di misura
+
+#### margin-left
+Imposta il margin del lato a sinistra.
+
+Valori accettati:
+- numero con unità di misura
+
+#### margin-right
+Imposta il margin del lato a destra.
+
+Valori accettati:
+- numero con unità di misura
+
+### Altre proprietà
+
+#### color
+Imposta il colore del contenuto di un elemento.
+
+Valori accettati:
+- nomi di colori
+- colori rgb e rgba
+- colori hsl e hsla
+- colori esadecimali
+
+#### width
+Imposta la larghezza del contenuto di un elemento.
+
+Valori accettati:
+- numero con unità di misura
+
+#### height
+Imposta la larghezza del contenuto di un elemento.
+
+Valori accettati:
+- numero con unità di misura
+
+#### display
+Imposta il metodo di visualizzazione dell'elemento.
+
+Valori accettati:
+- `block` l'elemento occupa l'intera larghezza dello shermo
+- `inline` l'elemento occula la larghezza minore possibile
+- `none` l'elemento esiste all'interno della pagina ma non occupa spazio e non è visibile
+
+#### visibility
+Imposta la visibilità di un elemento.
+
+Valori accettati:
+- `visible` visiblie
+- `hidden` nascosto
+
+Un elemento nascoso è semplicemente non visibile, occupa comunque l'area che occupava quando era visibile
