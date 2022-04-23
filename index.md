@@ -637,6 +637,7 @@ Valori accettati per \<ol\>:
 - `upper-greek` lettere greche maiuscole
 - `lower-roman` numeri romani minuscoli
 - `upper-roman` numeri romani maiuscoli
+- `none` nessuno
 
 #### list-style-position
 Imposta la posizione del simbolo della lista.
